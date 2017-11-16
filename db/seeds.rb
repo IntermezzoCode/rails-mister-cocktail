@@ -9,3 +9,24 @@
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
+
+cocktails_attributes = [
+  {
+    name:         "Pina Colada",
+    },
+    {
+      name:         "Gin Tonic",
+      },
+      {
+        name:         "Moscow Mule",
+        },
+        {
+          name:         "Jäger Bull",
+
+          },
+          {
+            name:         "Molotow Cocktail",
+
+          }
+        ]
+        Cocktail.create!(cocktails_attributes)
