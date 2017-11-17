@@ -1,10 +1,14 @@
-
-  <h1>Cocktail List</h1>
-      <%= link_to "Add a new cocktail", new_cocktail_path%>
-      <% @cocktails.each do |cocktail|%>
-    <div class="card">
-      <%= cl_image_tag cocktail.photo, height: 50, width: 50, crop: :thumb, gravity: :face %>
-      <%= link_to cocktail.name, cocktail_path(cocktail)%>
-      <% end %>
+<div class="list-container">
+<h1>Cocktail List</h1>
+<%= link_to "Add a new cocktail", new_cocktail_path%>
+  <div class="row">
+    <% @cocktails.each do |cocktail|%>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card">
+        <%= cl_image_tag cocktail.photo, height: 50, width: 50, crop: :thumb, gravity: :face %>
+        <%= link_to cocktail.name, cocktail_path(cocktail)%>
+      </div>
     </div>
-
+      <% end %>
+  </div>
+</div>
