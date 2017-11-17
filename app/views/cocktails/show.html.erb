@@ -1,15 +1,28 @@
-<h1> <%=   @cocktail.name %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1><%= @cocktail.name %></h1>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.description %> <%= dose.ingredient.name %> <%= link_to 'Delete', dose_path(dose), method: :delete %></li>
+        <% end %>
+      </ul>
+      <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>
+      <br>
+      <%= link_to 'Back to Cocktail List', cocktails_path %>
+      <br>
+      <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit, class: "btn btn-primary"  %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Add new Ingredient with Dose", new_cocktail_dose_path(@cocktail) %>
 
-<% @cocktail.ingredients.each do |ingredient|  %>
-<ul>
-  <li>
-    <%= ingredient.name %>:
-    <% end  %>
-
-    <% @cocktail.doses.each do |dose|  %>
-    <%= dose.description %> <%= link_to "DELETE", dose_path(dose), method: :delete %>
-    <% end  %>
-  </li>
-</ul>

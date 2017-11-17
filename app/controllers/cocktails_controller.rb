@@ -16,6 +16,7 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
+      #raise @cocktail.errors.messages
       render :new
     end
   end
@@ -42,6 +43,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo, :photo_cache, doses_attributes: [:ingredient_id, :description, :_destroy])
   end
 end
