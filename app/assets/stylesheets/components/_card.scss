@@ -7,6 +7,28 @@
   margin: 30px 10px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
+  background-color: #028090;
+}
+
+.thumb > img{
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.card-name > a{
+  color: white;
+  margin: 20px;
+}
+
+.thumb {
+  padding:10px;
+}
+
+.list-container {
+  background-color: rgba(234, 216, 176, 0.5);
+  width: 1000px;
+  margin-top: 20px;
 }

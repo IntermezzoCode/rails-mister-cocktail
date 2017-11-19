@@ -16,3 +16,9 @@
 
 @import "pages/cocktails";
 @import "components/card";
+@import "components/navbar";
+
+.grid {
+  display: flex;
+  justify-content: space-around;
+}
